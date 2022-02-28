@@ -6,20 +6,20 @@
     <title>Document</title>
   </head>
   <body>
-    <section id="container-slider" >
+    <section id="container-slider">
       <ul class="listslider">
         <li><a itlist="itList_0" href="#" class="item-select-slid"></a></li>
         <li><a itlist="itList_1" href="#"></a></li>
         <li><a itlist="itList_2" href="#"></a></li>
       </ul>
       <ul id="slider">
-        <li style="background-color: #2a3d41; z-index: 0; opacity: 1;">
+        <li style="background-color: #2a3d41; z-index: 0; opacity: 1">
           <div class="content_slider">
             <div>
               <img src="img/1.png" />
             </div>
             <div class="text-container">
-              <p>
+              <p class="title">
                 <b
                   >ServiceNow es nombrado líder en el Cuadrante Mágico de
                   Gartner de 2021 para herramientas de gestión de riesgos de
@@ -41,7 +41,7 @@
               <img src="img/2.png" />
             </div>
             <div class="text-container">
-              <p>
+              <p class="title">
                 <b
                   >ServiceNow es nombrado líder en The Forrester Wave™: Digital
                   Process Automation, Q4 2021</b
@@ -62,7 +62,7 @@
               <img src="img/3.png" />
             </div>
             <div class="text-container">
-              <p>
+              <p class="title">
                 <b
                   >ServiceNow es nombrado líder en The Forrester Wave™: Digital
                   Process Automation, Q4 2021</b
@@ -85,10 +85,6 @@
   </body>
 </html>
 <style>
-  
-  .content_slider .descripcion {
-    font-size: 60%;
-  }
   img {
     width: 100%;
     height: auto;
@@ -103,7 +99,7 @@
   #container-slider {
     position: relative;
     display: block;
-    width: 100%;    
+    width: 100%;
     height: auto;
   }
   #slider {
@@ -114,8 +110,6 @@
     min-height: 500px;
   }
   #slider li {
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
     position: absolute !important;
     top: 0 !important;
@@ -131,7 +125,7 @@
     z-index: -1;
     opacity: 0;
   }
-  
+
   .content_slider div {
     text-align: center;
   }
@@ -153,14 +147,12 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .btnSlider {
     color: #fff;
-    font-size: 1.5vw;
-    font-family: "arial";
+    font-size: 120%;
     letter-spacing: 1px;
     padding: 0.5vw 1.5vw;
-    border: 1px solid #ccc;
     background: rgba(13, 13, 13, 0.55);
     border-radius: 31px;
     text-decoration: none;
@@ -202,11 +194,11 @@
   .item-select-slid {
     background: #fff !important;
   }
-  
+
   .content_slider p b {
     font-size: 80%;
   }
-/** Estilos para pantallas menores a 700px**/
+  /** Estilos para pantallas menores a 700px**/
   @media screen and (max-width: 700px) {
     .content_slider {
       display: -webkit-flex;
@@ -217,12 +209,27 @@
       justify-content: center;
       align-items: center;
     }
+    .content_slider .title {
+      font-size: 60%;
+    }
+    .content_slider .descripcion {
+      font-size: 40%;
+    }
+    .btnSlider {
+      font-size: 60%;
+    }
   }
-/** Estilos para pantallas mayores a 900px**/
+  /** Estilos para pantallas mayores a 900px**/
   @media screen and (min-width: 900px) {
-    .text-container{
-    width: 50%;
-  }
+    .content_slider .title {
+      font-size: 100%;
+    }
+    .content_slider .descripcion {
+      font-size: 80%;
+    }
+    .text-container {
+      width: 50%;
+    }
     .content_slider h2 {
       font-size: 15pt !important;
     }
@@ -245,8 +252,7 @@
       padding: 10px 35px;
     }
     .btnSlider {
-      padding: 10px 30px;
-      font-size: 4pt;
+      font-size: 80%;
     }
   }
 </style>
@@ -289,7 +295,7 @@
       nextElement = side;
       side = curElement > nextElement ? "prev" : "next";
     }
-    //RESALTA LOS PUNTOS
+    //Resalta los puntos de desplazamiento
     let elementSel = document
       .getElementsByClassName("listslider")[0]
       .getElementsByTagName("a");
@@ -300,8 +306,11 @@
     elements[nextElement].style.opacity = 1;
     elements[nextElement].style.zIndex = 1;
   }
+
+  //Coloca las imagenes dinamicamente
+/**
+  var imagenes = document.querySelector(".sli");
+  slider.innerHTML += slider.innerHTML;**/
+
+  
 </script>
-<script
-  defer
-  src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
-></script>
