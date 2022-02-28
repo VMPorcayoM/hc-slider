@@ -14,13 +14,13 @@
       </ul>
       <ul id="slider">
         <li style="background-color: #2a3d41; z-index: 0; opacity: 1">
-          <div class="content_slider" id="boxes">
+          <div class="content_slider">
             <div>
-                <img src="https://i.ibb.co/9sHW6ZX/DPAS.jpg" >
+                <img src="img/1.png">
             </div>
             <div>
-                <p><b>ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para herramientas de gestión de riesgos de proveedores de TI.</b></p>
-              <p class="mifuente">
+                <p class="title"><b>ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para herramientas de gestión de riesgos de proveedores de TI.</b></p>
+              <p class="description">
                 ServiceNow es líder en este Cuadrante Mágico. ServiceNow VRM es un componente de su conjunto de soluciones IRM y automatiza la evaluación, gestión y mitigación del riesgo del proveedor.
               </p>
               <a href="#" class="btnSlider">Ver más</a>
@@ -30,11 +30,11 @@
         <li style="background-color: #2a3d41">
           <div class="content_slider">
             <div>
-                <img src="https://i.ibb.co/9sHW6ZX/DPAS.jpg">
+                <img src="img/2.png">
             </div>
             <div>
-              <p><b>ServiceNow es nombrado líder en The Forrester Wave™: Digital Process Automation, Q4 2021</b></p>
-              <p class="mifuente">
+              <p class="title"><b>ServiceNow es nombrado líder en The Forrester Wave™: Digital Process Automation, Q4 2021</b></p>
+              <p class="descripcion">
                 ServiceNow está en una posición única para ayudar a los clientes a optimizar procesos, crear flujos de trabajo críticos para el negocio con rapidez, crecer y gobernarlos a escala.
               </p>
               <a href="#" class="btnSlider">Ver más</a>
@@ -44,11 +44,11 @@
         <li style="background-color: #2a3d41">
           <div class="content_slider">
             <div>
-                <img src="https://i.ibb.co/9sHW6ZX/DPAS.jpg">
+                <img src="img/3.png">
             </div>
             <div>
-                <p><b>ServiceNow es nombrado líder en The Forrester Wave™: Digital Process Automation, Q4 2021</b></p>
-              <p class="mifuente">
+                <p class="title"><b>ServiceNow es nombrado líder en The Forrester Wave™: Digital Process Automation, Q4 2021</b></p>
+              <p class="descripcion">
                 ServiceNow es líder en este Cuadrante Mágico. Su oferta LCAP es App Engine y Creator Workflows, parte de Now Platform. La diferenciación de mercado de ServiceNow se basa en el amplio conjunto de capacidades de la plataforma que impulsan su popular gestión de servicios de TI (ITSM) y otras ofertas de SaaS, en particular su soporte para flujos de trabajo operativos.
               </p>
               <a href="#" class="btnSlider">Ver más</a>
@@ -60,13 +60,12 @@
   </body>
 </html>
 <style>
-    .mifuente {
-      font-size: 2vw;
-    }
 
  img{
-     margin-left: 20px;
-     margin-right: 40px;
+     width: 100%;
+     height: auto;
+     display: inline-block;
+     
  }
 
   * {
@@ -213,7 +212,12 @@
   .item-select-slid {
     background: #fff !important;
   }
-
+  .content_slider .descripcion{
+      font-size: 50% ;
+    }
+    .content_slider p b{
+      font-size: 80% ;
+    }
  
 
   @media screen and (max-width: 460px) {
@@ -221,9 +225,7 @@
     .content_slider h2 {
       font-size: 15pt !important;
     }
-    .content_slider p {
-      font-size: 12pt !important;
-    }
+    
     #container-slider .arrowPrev,
     #container-slider .arrowNext {
       font-size: 20pt;
