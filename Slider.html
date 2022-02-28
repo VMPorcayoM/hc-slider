@@ -31,8 +31,12 @@
                 un componente de su conjunto de soluciones IRM y automatiza la
                 evaluación, gestión y mitigación del riesgo del proveedor.
               </p>
-              <a href="https://reprints2.forrester.com/#/assets/2/228/RES176608/report
-              " class="btnSlider">Ver más</a>
+              <a
+                href="https://reprints2.forrester.com/#/assets/2/228/RES176608/report
+              "
+                class="btnSlider"
+                >Ver más</a
+              >
             </div>
           </div>
         </li>
@@ -53,8 +57,12 @@
                 a optimizar procesos, crear flujos de trabajo críticos para el
                 negocio con rapidez, crecer y gobernarlos a escala.
               </p>
-              <a href="https://www.gartner.com/doc/reprints?id=1-24AEKPVN&ct=201001&st=sb
-              " class="btnSlider">Ver más</a>
+              <a
+                href="https://www.gartner.com/doc/reprints?id=1-24AEKPVN&ct=201001&st=sb
+              "
+                class="btnSlider"
+                >Ver más</a
+              >
             </div>
           </div>
         </li>
@@ -78,8 +86,12 @@
                 gestión de servicios de TI (ITSM) y otras ofertas de SaaS, en
                 particular su soporte para flujos de trabajo operativos.
               </p>
-              <a href="https://reprints2.forrester.com/#/assets/2/228/RES161668/report
-              " class="btnSlider">Ver más</a>
+              <a
+                href="https://reprints2.forrester.com/#/assets/2/228/RES161668/report
+              "
+                class="btnSlider"
+                >Ver más</a
+              >
             </div>
           </div>
         </li>
@@ -130,12 +142,14 @@
   }
 
   .content_slider div {
-    text-align: center;
+    text-align: left;
   }
-  .content_slider p {
-    font-family: "arial";
+  .content_slider p, .btnSlider {
+    font-family: 'Roboto';
     color: #fff;
     margin-bottom: 20px;
+    text-align: left;
+
   }
   #slider li .content_slider {
     background: rgba(0, 0, 0, 0.5);
@@ -153,7 +167,6 @@
 
   .btnSlider {
     color: #4c6b65;
-    font-size: 120%;
     letter-spacing: 1px;
     text-decoration: none;
     transition: 0.5s all;
@@ -169,15 +182,15 @@
     cursor: pointer;
     margin: 0 5px;
   }
-  .listslider li a {
-    background: #84b7a2;
+  .listslider li a {    
+    background: #3c5654;
     border-radius: 50%;
     width: 100%;
     height: 100%;
     display: block;
   }
   .item-select-slid {
-    background: #3c5654 !important;
+    background: #84b7a2 !important;
   }
 
   .content_slider p b {
@@ -185,6 +198,21 @@
   }
   /** Estilos para pantallas menores a 700px**/
   @media screen and (max-width: 700px) {
+    .listslider {
+      position: absolute;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      z-index: 2;
+      right: 0;
+      top: 50%;
+      transform: rotate(-0.75turn);
+    }
     .content_slider {
       display: -webkit-flex;
       display: -moz-flex;
@@ -196,12 +224,50 @@
       align-items: center;
     }
     .content_slider .title {
-      font-size: 60%;
+      font-size: 150%;
     }
     .content_slider .description,
     .btnSlider {
       font-size: 40%;
     }
+
+    .content_slider .text-container {
+      order: 1;
+    }
+    .content_slider .btnSlider {
+      order: 2;
+    }
+    .content_slider .image {
+      order: 3;
+    }
+  }
+  /** Estilos para pantallas entre 700 y 900px**/
+  @media screen and (min-width: 700px), screen and (max-width: 900px) {
+    .listslider {
+      position: absolute;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      z-index: 2;
+      right: 0;
+      top: 50%;
+      transform: rotate(-0.75turn);
+    }
+    .content_slider .title {
+      font-size: 140%;
+    }
+    .content_slider .description,
+    .btnSlider {
+      font-size: 90%;
+    }
+  }
+  /** Estilos para pantallas mayores a 900px**/
+  @media screen and (min-width: 900px) {
     .listslider {
       position: absolute;
       display: -webkit-flex;
@@ -217,20 +283,8 @@
       z-index: 2;
       transform: translateX(-50%);
     }
-    .content_slider .text-container {
-      order: 1;
-    }
-    .content_slider .btnSlider {
-      order: 2;
-    }
-    .content_slider .image {
-      order: 3;
-    }
-  }
-  /** Estilos para pantallas mayores a 900px**/
-  @media screen and (min-width: 900px) {
     .content_slider .title {
-      font-size: 120%;
+      font-size: 165%;
     }
     .content_slider .description,
     .btnSlider {
@@ -248,24 +302,6 @@
     }
     #slider li .content_slider {
       padding: 10px 35px;
-    }
-    .btnSlider {
-      font-size: 80%;
-    }
-    .listslider {
-      position: absolute;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      right: 5%;
-      bottom: 50%;
-      list-style: none;
-      z-index: 2;
-      transform: translateX(-50%);
     }
   }
 </style>
