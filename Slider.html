@@ -16,7 +16,7 @@
         <li style="background-color: #2a3d41; z-index: 0; opacity: 1">
           <div class="content_slider">
             <div class="image">
-              <img src="img/1.png" />
+              <img src="img/servicenow-1.png" />
             </div>
             <div class="text-container">
               <p class="title">
@@ -32,9 +32,8 @@
                 evaluación, gestión y mitigación del riesgo del proveedor.
               </p>
               <a
-                href="https://reprints2.forrester.com/#/assets/2/228/RES176608/report
-              "
-                class="btnSlider"
+                href="https://reprints2.forrester.com/#/assets/2/228/RES176608/report"
+                id="btnSlider"
                 >Ver más</a
               >
             </div>
@@ -43,7 +42,7 @@
         <li style="background-color: #2a3d41">
           <div class="content_slider">
             <div class="image">
-              <img src="img/2.png" />
+              <img src="img/servicenow-2.png" />
             </div>
             <div class="text-container">
               <p class="title">
@@ -60,7 +59,7 @@
               <a
                 href="https://www.gartner.com/doc/reprints?id=1-24AEKPVN&ct=201001&st=sb
               "
-                class="btnSlider"
+                id="btnSlider"
                 >Ver más</a
               >
             </div>
@@ -69,7 +68,7 @@
         <li style="background-color: #2a3d41">
           <div class="content_slider">
             <div class="image">
-              <img src="img/3.png" />
+              <img src="img/servicenow-3.png" />
             </div>
             <div class="text-container">
               <p class="title">
@@ -89,7 +88,7 @@
               <a
                 href="https://reprints2.forrester.com/#/assets/2/228/RES161668/report
               "
-                class="btnSlider"
+                id="btnSlider"
                 >Ver más</a
               >
             </div>
@@ -100,6 +99,18 @@
   </body>
 </html>
 <style>
+  .listslider{
+    position: absolute;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      z-index: 2;     
+  }
   img {
     width: 100%;
     height: auto;
@@ -109,13 +120,13 @@
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
   }
   #container-slider {
     position: relative;
     display: block;
     width: 100%;
-    height: auto;
+    height: auto;    
   }
   #slider {
     position: relative;
@@ -144,14 +155,14 @@
   .content_slider div {
     text-align: left;
   }
-  .content_slider p, .btnSlider {
+  .content_slider p {
     font-family: 'Roboto';
     color: #fff;
     margin-bottom: 20px;
     text-align: left;
 
   }
-  #slider li .content_slider {
+  .content_slider {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 40px;
   }
@@ -163,15 +174,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
-  .btnSlider {
+  #btnSlider {
     color: #4c6b65;
     letter-spacing: 1px;
     text-decoration: none;
     transition: 0.5s all;
   }
-  .btnSlider:hover {
+  #btnSlider:hover {
     background: #111;
   }
 
@@ -197,21 +209,12 @@
     font-size: 80%;
   }
   /** Estilos para pantallas menores a 700px**/
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 899px) {
     .listslider {
-      position: absolute;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      z-index: 2;
-      right: 0;
-      top: 50%;
-      transform: rotate(-0.75turn);
+      left: 43%;
+      bottom: 5%;
+      flex-direction: row;
+      justify-content: center;
     }
     .content_slider {
       display: -webkit-flex;
@@ -224,92 +227,59 @@
       align-items: center;
     }
     .content_slider .title {
-      font-size: 150%;
+      font-size: 140%;
     }
     .content_slider .description,
-    .btnSlider {
-      font-size: 40%;
+    #btnSlider {
+      font-size: 90%;
     }
 
     .content_slider .text-container {
       order: 1;
     }
-    .content_slider .btnSlider {
+    .content_slider #btnSlider {
       order: 2;
     }
     .content_slider .image {
       order: 3;
-    }
-  }
-  /** Estilos para pantallas entre 700 y 900px**/
-  @media screen and (min-width: 700px), screen and (max-width: 900px) {
-    .listslider {
-      position: absolute;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      z-index: 2;
-      right: 0;
-      top: 50%;
-      transform: rotate(-0.75turn);
-    }
-    .content_slider .title {
-      font-size: 140%;
-    }
-    .content_slider .description,
-    .btnSlider {
-      font-size: 90%;
-    }
+    }  
   }
   /** Estilos para pantallas mayores a 900px**/
   @media screen and (min-width: 900px) {
     .listslider {
-      position: absolute;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      left: 50%;
-      bottom: 5%;
-      list-style: none;
-      z-index: 2;
-      transform: translateX(-50%);
+      justify-content: center;
+      right: 0;
+      top: 60%;
+      transform: rotate(-0.75turn);
     }
     .content_slider .title {
       font-size: 165%;
     }
     .content_slider .description,
-    .btnSlider {
+    #btnSlider {
       font-size: 90%;
     }
     .text-container {
-      width: 50%;
-    }
-    .content_slider h2 {
-      font-size: 15pt !important;
+      margin-left: 10%;
+      width: 80%;
     }
     #slider {
       height: 400px;
       min-height: 400px;
     }
-    #slider li .content_slider {
+    .content_slider {
       padding: 10px 35px;
+      display: grid;
+      grid-template-columns: 50% 50%;
     }
   }
 </style>
 <script>
+  //Tiempo entre cards
   if (document.querySelector("#container-slider")) {
     setInterval('fntExecuteSlide("next")', 5000);
   }
-  //------------------------------ LIST SLIDER -------------------------
+  //Para ubicarse sobre la card al dar click en los puntos
   if (document.querySelector(".listslider")) {
     let link = document.querySelectorAll(".listslider li a");
     link.forEach(function (link) {
@@ -360,4 +330,17 @@
   /**
   var imagenes = document.querySelector(".sli");
   slider.innerHTML += slider.innerHTML;**/
+
+  //Identifica idioma (Devuelve true si es en Español y false si es en Inglés)
+  function getLanguage(){
+    let regex=/\/es\//;
+    if(regex.exec(window.location.href) != null){
+      return true;
+    }
+    return false;
+  }
+  //Si el lenguaje es inglés
+  if(!getLanguage()){
+    document.getElementsByClassName("btnSlider").value = "See more";
+  }
 </script>
