@@ -3,97 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
   </head>
   <body>
-    <section id="container-slider">
-      <ul class="listslider">
-        <li><a itlist="itList_0" href="#" class="item-select-slid"></a></li>
-        <li><a itlist="itList_1" href="#"></a></li>
-        <li><a itlist="itList_2" href="#"></a></li>
+    <section id="container-slider" style="background-color: #2a3d41;">
+      <ul class="listslider" id="listslider">
+        
       </ul>
       <ul id="slider">
-        <li style="background-color: #2a3d41; z-index: 0; opacity: 1">
-          <div class="content_slider">
-            <div class="image">
-              <img src="img/servicenow-1.png" />
-            </div>
-            <div class="text-container">
-              <p class="title">
-                <b
-                  >ServiceNow es nombrado líder en el Cuadrante Mágico de
-                  Gartner de 2021 para herramientas de gestión de riesgos de
-                  proveedores de TI.</b
-                >
-              </p>
-              <p class="description">
-                ServiceNow es líder en este Cuadrante Mágico. ServiceNow VRM es
-                un componente de su conjunto de soluciones IRM y automatiza la
-                evaluación, gestión y mitigación del riesgo del proveedor.
-              </p>
-              <a
-                href="https://reprints2.forrester.com/#/assets/2/228/RES176608/report"
-                id="btnSlider"
-                >Ver más</a
-              >
-            </div>
-          </div>
-        </li>
-        <li style="background-color: #2a3d41">
-          <div class="content_slider">
-            <div class="image">
-              <img src="img/servicenow-2.png" />
-            </div>
-            <div class="text-container">
-              <p class="title">
-                <b
-                  >ServiceNow es nombrado líder en The Forrester Wave™: Digital
-                  Process Automation, Q4 2021</b
-                >
-              </p>
-              <p class="description">
-                ServiceNow está en una posición única para ayudar a los clientes
-                a optimizar procesos, crear flujos de trabajo críticos para el
-                negocio con rapidez, crecer y gobernarlos a escala.
-              </p>
-              <a
-                href="https://www.gartner.com/doc/reprints?id=1-24AEKPVN&ct=201001&st=sb
-              "
-                id="btnSlider"
-                >Ver más</a
-              >
-            </div>
-          </div>
-        </li>
-        <li style="background-color: #2a3d41">
-          <div class="content_slider">
-            <div class="image">
-              <img src="img/servicenow-3.png" />
-            </div>
-            <div class="text-container">
-              <p class="title">
-                <b
-                  >ServiceNow es nombrado líder en The Forrester Wave™: Digital
-                  Process Automation, Q4 2021</b
-                >
-              </p>
-              <p class="description">
-                ServiceNow es líder en este Cuadrante Mágico. Su oferta LCAP es
-                App Engine y Creator Workflows, parte de Now Platform. La
-                diferenciación de mercado de ServiceNow se basa en el amplio
-                conjunto de capacidades de la plataforma que impulsan su popular
-                gestión de servicios de TI (ITSM) y otras ofertas de SaaS, en
-                particular su soporte para flujos de trabajo operativos.
-              </p>
-              <a
-                href="https://reprints2.forrester.com/#/assets/2/228/RES161668/report
-              "
-                id="btnSlider"
-                >Ver más</a
-              >
-            </div>
-          </div>
-        </li>
+        
       </ul>
     </section>
   </body>
@@ -164,22 +81,19 @@
   }
   .content_slider {
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 40px;
-  }
-  .content_slider {
+    padding: 10px 40px;  
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
   }
 
   #btnSlider {
     color: #4c6b65;
-    letter-spacing: 1px;
+    varter-spacing: 1px;
     text-decoration: none;
     transition: 0.5s all;
   }
@@ -208,11 +122,12 @@
   .content_slider p b {
     font-size: 80%;
   }
-  /** Estilos para pantallas menores a 700px**/
+  /** Estilos para pantallas menores a 899px**/
   @media screen and (max-width: 899px) {
     .listslider {
-      left: 43%;
-      bottom: 5%;
+      left: 0;
+      right: 0;
+      bottom: 3%;
       flex-direction: row;
       justify-content: center;
     }
@@ -225,6 +140,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-height: 650px;
+      max-height: 650px;
     }
     .content_slider .title {
       font-size: 140%;
@@ -248,7 +165,7 @@
   @media screen and (min-width: 900px) {
     .listslider {
       justify-content: center;
-      right: 0;
+      right: 0;    
       top: 60%;
       transform: rotate(-0.75turn);
     }
@@ -274,19 +191,110 @@
     }
   }
 </style>
+
 <script>
+  // Array con titulos en inglés (Deben coincidir el numero de titulos con el número de imagenes y deben insertarse en el orden que se desee presentar igual que las imagenes) 
+  const titlesEnglish=["ServiceNow Named a Leader in The Forrester Wave™: Digital Process Automation, Q4 2021","ServiceNow Named a Leaderin the 2021 Gartner Magic Quadrant for Enterprise Low-Code Application Platforms","ServiceNow Named a Leader in The Forrester Wave™: Low-Code Development Platforms For Professional Developers, Q2 2021", "ServiceNow named a Leader for 8th year in Gartner® 2021 ITSM Magic Quadrant™","ServiceNow Named a Leader in the 2021 Gartner Magic Quadrant for IT Vendor Risk Management Tools", "ServiceNow Named a Leaderin the 2021 Gartner Magic Quadrant for Enterprise Agile Planning Tools", 
+  "ServiceNow Named a Leader in the 2021 Gartner Magic Quadrant for IT Risk Management","ServiceNow Named a Leader in the 2021 Gartner Magic Quadrant for the CRM Customer Engagement Center", "ServiceNow Named a Leader in The Forrester Wave™: Enterprise Service Management, Q4 2021"];
+  // Array con titulos en español (Deben coincidir el numero de titulos con el número de imagenes y deben insertarse en el orden que se desee presentar igual que las imagenes) 
+  const titlesSpanish=["ServiceNow es nombrado líder en The Forrester Wave™: Digital Process Automation, Q4 2021", "ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para plataformas de aplicaciones empresariales “Low-Code”", "ServiceNow es nombrado líder en The Forrester Wave™: Plataformas de desarrollo Low-Code para desarrolladores profesionales, Q2 2021", "ServiceNow es nombrado líder por octavo año en Gartner® 2021 ITSM Magic Quadrant™", "ServiceNow es nombrado líder",
+  "ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para herramientas de gestión de riesgos de proveedores de TI.", "ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para herramientas de planificación empresarial ágil", "ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para la gestión de riesgos de TI", "ServiceNow es nombrado líder en el Cuadrante Mágico de Gartner de 2021 para el Centro de Compromiso con el Cliente de CRM ","ServiceNow es nombrado líder en The Forrester Wave™: gestión de servicios empresariales, Q4 2021"] ;
+  // Array con discripciones en inglés (Igualmente deben conincidir con el número de titulos y el número de imagenes, y deben insertarse en los arrays en el orden correspondiente)
+  const descriptionEnglish=["ServiceNow is uniquely positioned to help customers optimize processes, build business-critical workflows with speed, grow and govern them at scale.", "ServiceNow is a Leader in this Magic Quadrant. Its LCAP offering is App Engine and Creator Workflows, part of the Now Platform. ServiceNow’s market differentiation is based on the wide set of platform capabilities that power its popular IT service management (ITSM) and other SaaS offerings, particularly its support for operational workflows.","ServiceNow has grown to a low-code platform of the first rank. Known for its IT service management solutions, ServiceNow has invested heavily in its low-code tooling and \"workflow platform\" messaging.","ServiceNow’s ITSM tool roadmap includes AITSM improvements and ITOM decentralization driven by its Site Reliability Operations product and artificial intelligence for IT operations (AIOps). Recent acquisitions include Element AI (AI), Sweagle (SACM), Intellibot (automation) and Lightstep (observability).",
+  "ServiceNow is a Leader in this Magic Quadrant. ServiceNow VRM is a component of its IRM solution suite, and automates assessing, managing and mitigating vendor risk. ServiceNow does business in multiple geographies, but with most of its IT VRM sales in North America. ServiceNow targets its installed base and highly regulated industries for IT VRM.","ServiceNow ITBM is built on the Now Platform, providing integration of operation work with development work in a single unified backlog.","ServiceNow is a Leader in this Magic Quadrant. ServiceNow offers ITRM capabilities as part of its GRC product, Integrated Risk Management built on the Now platform. ServiceNow IRM is focused on providing IT risk and control assessment and cyber risk management capabilities.","The ServiceNow Customer Service Management (CSM) product helps companies unite customer-facing teams and communication channels with back-office teams, processes and systems to resolve issues, proactively identify and fix problems, and simplify engagement in order to quickly handle customer requests.","ServiceNow continues to shape the ESM market. Strategically, ServiceNow remains the most ambitious ESM vendor in the market, seeking to further the automation, employee services, and employee experience enhancements it brings to customers."];
+  // Array con discripciones en inglés (Igualmente deben conincidir con el número de titulos y el número de imagenes, y deben insertarse en los arrays en el orden correspondiente)
+  const descriptionSpanish=["ServiceNow está en una posición única para ayudar a los clientes a optimizar procesos, crear flujos de trabajo críticos para el negocio con rapidez, crecer y gobernarlos a escala.","ServiceNow es líder en este Cuadrante Mágico. Su oferta LCAP es App Engine y Creator Workflows, parte de Now Platform. La diferenciación de mercado de ServiceNow se basa en el amplio conjunto de capacidades de la plataforma que impulsan su popular gestión de servicios de TI (ITSM) y otras ofertas de SaaS, en particular su soporte para flujos de trabajo operativos.","ServiceNow ha crecido hasta convertirse en una plataforma Low-Code de primer nivel. Conocido por sus soluciones de administración de servicios de TI, ServiceNow ha invertido mucho en sus herramientas de low code y mensaje de \"plataforma de flujo de trabajo\".","El roadmap de la herramienta ITSM de ServiceNow incluye mejoras de AITSM y descentralización de ITOM impulsada por su producto Site Reliability Operations e inteligencia artificial para operaciones de TI (AIOps). Las adquisiciones recientes incluyen Element AI (AI), Sweagle (SACM), Intellibot (automatización) y Lightstep (observabilidad).",
+  "ServiceNow es líder en este Cuadrante Mágico. ServiceNow VRM es un componente de su conjunto de soluciones IRM y automatiza la evaluación, gestión y mitigación del riesgo del proveedor.","ServiceNow ITBM está construido en Now Platform, lo que proporciona la integración del trabajo de operación con el trabajo de desarrollo en un único backlog unificado.","ServiceNow es líder en este Cuadrante Mágico. ServiceNow ofrece capacidades de ITRM como parte de su producto GRC, Integrated Risk Management construido en la plataforma Now. ServiceNow IRM se centra en proporcionar evaluación de control y riesgo de TI y capacidades de gestión de riesgo cibernético.","El producto ServiceNow Customer Service Management (CSM) ayuda a las empresas a unir equipos y canales de comunicación orientados al cliente con equipos, procesos y sistemas administrativos para resolver problemas, identificar y solucionar problemas de manera proactiva y simplificar el compromiso para manejar rápidamente las solicitudes de los clientes.","ServiceNow continúa dando forma al mercado de ESM. Estratégicamente, ServiceNow sigue siendo el proveedor de ESM más ambicioso del mercado y busca promover la automatización, los servicios para empleados y las mejoras en la experiencia de los empleados que brinda a los clientes."]
+  // Array con links para botones de cada card del carrusel (Deben insertarse en el orden que se desee)
+  const links=["https://reprints2.forrester.com/#/assets/2/228/RES176608/report","https://www.gartner.com/doc/reprints?id=1-24AEKPVN&ct=201001&st=sb","https://reprints2.forrester.com/#/assets/2/228/RES161668/report","https://www.gartner.com/doc/reprints?id=1-24BTOL7R&ct=201007&st=sb","https://www.gartner.com/doc/reprints?id=1-2412N2M0&ct=200827&st=sb","https://www.gartner.com/doc/reprints?id=1-25UCWQ70&ct=210422&st=sb",
+  "https://www.gartner.com/doc/reprints?id=1-1ZHQ1JNZ&ct=200717&st=sb","https://www.gartner.com/doc/reprints?id=1-1Z6CEYL4&ct=200604&st=sb","https://reprints2.forrester.com/#/assets/2/228/RES176568/report"]
+  //Coloca las imagenes dinamicamente
+  //Número de imagenes almacenadas(A modificar en cada actualización)
+  var noImagenesAlmacenadas = 9;
+  // Año en que se están subiendo las imagenes a wordpress formato AAAA (Ya que la ubicación de las imagenes cambia dependiendo la fecha de subida)
+  const year = "2022";
+  // Mes en que se están subiendo las imagenes a wordpress formato MM (Ya que la ubicación de las imagenes cambia dependiendo la fecha de subida)
+  const month = "03"
+
+  /** Ejemplo de URL relativa de las iamgenes en wordpress: wp-content/uploads/${year}/${month}/servicenow-${i}.png **/
+  
+  const listSlid= document.querySelector(".listslider");
+  const slid = document.querySelector("#slider");
+
+  var bloqueSlider = ``;
+  var bloqueList=``;
+  // Determina el idioma de la página (true spanish false english)
+  let language =getLanguage();
+  // Crea todos los slides dependiendo el número de imagenes que se almacenen
+  for (var i = 1; i <= noImagenesAlmacenadas; i++) {
+    //Valida si es el primero para seleccionarlo
+    i == 1 ? 
+    bloqueList =`
+    <li><a itlist='itList_${i-1}' href="#" class="item-select-slid"></a></li>
+  ` : bloqueList =`
+    <li><a itlist='itList_${i-1}' href="#"></a></li>
+  ` ; 
+  i == 1 ? 
+  bloqueSlider = `
+  <li style="background-color: #2a3d41; z-index: 0; opacity: 1">
+          <div class="content_slider">
+            <div class="image">
+              <img src="wp-content/uploads/${year}/${month}/servicenow-${i}.png" />
+            </div>
+            <div class="text-container">
+              <p class="title">
+                <b>${language ? titlesSpanish[i-1] : titlesEnglish[i-1]}</b>
+              </p>
+              <p class="description">
+                ${language ? descriptionSpanish[i-1] : descriptionEnglish[i-1]}
+              </p>
+              <a
+                href="${links[i-1]}"
+                id="btnSlider"
+                >Ver más</a
+              >
+            </div>
+          </div>
+        </li> 
+        ` :  bloqueSlider = `
+  <li style="background-color: #2a3d41; ">
+          <div class="content_slider">
+            <div class="image">
+              <img src="wp-content/uploads/${year}/${month}/servicenow-${i}.png" />
+            </div>
+            <div class="text-container">
+              <p class="title">
+                <b>${language ? titlesSpanish[i-1] : titlesEnglish[i-1]}</b>
+              </p>
+              <p class="description">
+                ${language ? descriptionSpanish[i-1] : descriptionEnglish[i-1]}
+              </p>
+              <a
+                href="${links[i-1]}"
+                id="btnSlider"
+                >Ver más</a
+              >
+            </div>
+          </div>
+        </li> 
+        `;
+        listSlid.innerHTML += bloqueList;
+        slid.innerHTML += bloqueSlider;
+
+  }
+
   //Tiempo entre cards
   if (document.querySelector("#container-slider")) {
     setInterval('fntExecuteSlide("next")', 5000);
   }
   //Para ubicarse sobre la card al dar click en los puntos
   if (document.querySelector(".listslider")) {
-    let link = document.querySelectorAll(".listslider li a");
+    var link = document.querySelectorAll(".listslider li a");
     link.forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
-        let item = this.getAttribute("itlist");
-        let arrItem = item.split("_");
+        var item = this.getAttribute("itlist");
+        var arrItem = item.split("_");
         fntExecuteSlide(arrItem[1]);
         return false;
       });
@@ -294,13 +302,14 @@
   }
 
   function fntExecuteSlide(side) {
-    let parentTarget = document.getElementById("slider");
-    let elements = parentTarget.getElementsByTagName("li");
-    let curElement, nextElement;
+    var parentTarget = document.getElementById("slider");
+    var elements = parentTarget.getElementsByTagName("li");
+    var curElement, nextElement;
 
     for (var i = 0; i < elements.length; i++) {
-      if (elements[i].style.opacity == 1) {
-        curElement = i;
+      var x = i;
+      if (elements[x].style.opacity == 1) {
+        curElement = x;
         break;
       }
     }
@@ -315,7 +324,7 @@
       side = curElement > nextElement ? "prev" : "next";
     }
     //Resalta los puntos de desplazamiento
-    let elementSel = document
+    var elementSel = document
       .getElementsByClassName("listslider")[0]
       .getElementsByTagName("a");
     elementSel[curElement].classList.remove("item-select-slid");
@@ -325,15 +334,11 @@
     elements[nextElement].style.opacity = 1;
     elements[nextElement].style.zIndex = 1;
   }
-
-  //Coloca las imagenes dinamicamente
-  /**
-  var imagenes = document.querySelector(".sli");
-  slider.innerHTML += slider.innerHTML;**/
+  
 
   //Identifica idioma (Devuelve true si es en Español y false si es en Inglés)
   function getLanguage(){
-    let regex=/\/es\//;
+    var regex=/\/es\//;
     if(regex.exec(window.location.href) != null){
       return true;
     }
