@@ -208,6 +208,50 @@
       grid-template-columns: 50% 50%;
     }
   }
+  @media screen and (min-width: 1500px) {
+    .content_slider{
+      min-height: 700px;
+      max-height: 700px;
+    }
+    #container-slider{
+      min-height: 600px;
+      max-height:600px;
+    }    
+    .listslider {
+      justify-content: center;
+      right: 0;    
+      top: 60%;
+      transform: rotate(-0.75turn);
+    }
+    .content_slider .image {
+      height: 650px;
+      width: 650px;
+    }
+    .content_slider .title {
+      font-size: 185%;
+      margin-right: 30px;
+    }
+    .content_slider .description{
+      margin-right: 40px;
+    }
+    .content_slider .description,
+    .btnSlider,#btnSlider0 {
+      font-size: 110%;
+    }
+    .text-container {
+      margin-left: 10%;
+      width: 80%;
+    }
+    #slider {
+      height: 400px;
+      min-height: 400px;
+    }
+    .content_slider {
+      padding: 10px 35px;
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  }
 </style>
 
 <script>
@@ -305,7 +349,7 @@
 
   //Tiempo entre cards
   if (document.querySelector("#container-slider")) {
-    setInterval('fntExecuteSlide("next")', 5000);
+    setInterval('fntExecuteSlide("next")', 8000);
   }
   //Para ubicarse sobre la card al dar click en los puntos
   if (document.querySelector(".listslider")) {
